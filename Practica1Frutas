@@ -10,6 +10,13 @@ hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 # 3. Rangos para el verde
 lower_green = np.array([35, 50 , 50])
 upper_green = np.array([85, 255, 255])
+# Rango para el rojo
+lower_red = np.array([0, 100, 100])
+upper_red = np.array([10, 255, 255])
+# Rango para el amarillo 
+lower_yellow = np.array([20, 100, 100])
+upper_yellow = np.array([32, 255, 255])
+
 
 # 4. Crear máscara y limpiar ruido (Actividad 2)
 mask_green = cv2.inRange(hsv, lower_green, upper_green) # Máscara original [cite: 10]
@@ -36,6 +43,7 @@ cv2.imshow("1. Imagen Original", img)
 cv2.imshow("2. Imagen en HSV", hsv) 
 cv2.imshow("3. Mascara con Ruido", mask_green)
 cv2.imshow("4. Mascara Limpia", mask_cleaned) 
+
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

@@ -12,7 +12,7 @@ if not ret:
     cap.release()
     exit()
 
-
+cv2.imshow('background', background)
 while cap.isOpened():
     ret, frame = cap.read()
     if not ret:
