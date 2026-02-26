@@ -1,13 +1,13 @@
 # Práctica: Segmentación de Frutas usando Máscara HSV
-**Nombre:** Paola [Tu Apellido]  
-**Grupo:** [Tu Grupo]  
+**Nombre:** Paola Garcia Garcia  
+**Grupo:** B  
 
 ## 1. Objetivo
 [cite_start]Aplicar el modelo de color HSV para segmentar objetos y analizar los resultados directamente sobre una máscara binaria[cite: 2].
 
-## 2. Desarrollo (Capturas de Pantalla)
+## 2. Desarrollo 
 
-### Color Verde (Ya lo tienes)
+### Color Verde 
 * ![Original](ruta/a/tu/imagen_original.png)
 * ![HSV](ruta/a/tu/imagen_hsv.png)
 * ![Máscara](ruta/a/tu/mascara_verde.png)
