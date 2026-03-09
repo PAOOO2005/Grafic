@@ -21,12 +21,9 @@ while True:
         cv.circle(img, (x + int(w*0.7), y + int(h*0.4)), 5, (255, 0, 0), -1)
 
         #NARIz
-        # Un pequeño círculo rojo como de payaso
-        cv.circle(img, (x + int(w*0.5), y + int(h*0.55)), 12, (203,134 , 255), -1)
+        cv.circle(img, (x + int(w*0.5), y + int(h*0.55)), 12, (203, 134 , 255), -1)
 
         #BOCA
-        # Dibujamos una media luna para la sonrisa
-        # Los parámetros son: centro, (ancho, alto), rotación, inicio, fin, color, grosor
         cv.ellipse(img, (x + int(w*0.5), y + int(h*0.75)), (int(w*0.5), 20), 0, 0, 180, (0, 0, 0), 10)
 
         # Tu rectángulo original
