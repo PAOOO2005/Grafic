@@ -14,7 +14,8 @@ def init():
     # Configuración de proyección
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    gluPerspective(90, 1, 0.1, 50.0)
+    
+    gluPerspective(60, 1.0, 0.1, 50.0)
     # Cambiar a la matriz de modelo para los objetos
     glMatrixMode(GL_MODELVIEW)
 
@@ -22,14 +23,27 @@ def draw_cube():
     global angle
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # Limpiar pantalla y buffer de profundidad
 
-    # Configuración de la vista del cubo
     glLoadIdentity()
-    glTranslatef(0.0, 0.0, -4)  # Alejar el cubo para que sea visible
-    glRotatef(angle, 0, 0, 1)   # Rotar el cubo en todos los ejes
-    
+    glTranslatef(-3.0, 0.0, -10.0) # Lo movemos a la izquierda y atrás
+    glRotatef(angle, 1, 0, 0)      # Solo eje X
+    dibujar_geometria_cubo()
 
-    #glRotatef(angle, 0, 1, 0)   # Rotar el cubo en todos los ejes
+    #Cubo 2
+    glLoadIdentity()
+    glTranslatef(0.0, 0.0, -10.0) 
+    glRotatef(angle, 0, 1, 0)      
+    dibujar_geometria_cubo()
 
+    #Cybo 3 
+    glLoadIdentity()
+    glTranslatef(3.0, 0.0, -10.0) 
+    glRotatef(angle, 0, 0, 1)     
+    dibujar_geometria_cubo()
+
+    glfw.swap_buffers(window)  
+    angle += 0.1 
+
+def dibujar_geometria_cubo():
     glBegin(GL_QUADS)  # Iniciar el cubo como un conjunto de caras (quads)
 
     # Cada conjunto de cuatro vértices representa una cara del cubo
@@ -75,8 +89,7 @@ def draw_cube():
     glEnd()
     glFlush()
 
-    glfw.swap_buffers(window)  # Intercambiar buffers para animación suave
-    angle += 0.1  # Incrementar el ángulo para rotación
+ # Incrementar el ángulo para rotación
 
 def main():
     global window
@@ -105,62 +118,6 @@ def main():
         glfw.poll_events()
 
     glfw.terminate()  # Cerrar GLFW al salir
-
-
-def draw_cube2():
-    global angle
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # Limpiar pantalla y buffer de profundidad
-
-    # Configuración de la vista del cubo
-    glLoadIdentity()
-    glTranslatef(0.0, 0.0, -1)  # Alejar el cubo para que sea visible
-    glRotatef(angle, 0, 0, 1)   # Rotar el cubo en todos los ejes
-    
-
-    #glRotatef(angle, 0, 1, 0)   # Rotar el cubo en todos los ejes
-
-    glBegin(GL_QUADS)  # Iniciar el cubo como un conjunto de caras (quads)
-
-    # Cada conjunto de cuatro vértices representa una cara del cubo
-    glColor3f(1.0, 0.0, 1.0)  # Rojo
-    glVertex3f( 1, 1,-1)
-    glColor3f(0.4, 1.0, 1.0)  # Verde
-    glVertex3f(-1, 1,-1)
-    glColor3f(0.4, 1.0, 1.0)  # Verde
-    glVertex3f(-1, 1, 1)
-    glColor3f(0.3, 0.8, 0.1)  # Verde
-    glVertex3f( 1, 1, 1)
-
-    glColor3f(0.0, 1.0, 0.0)  # Verde
-    glVertex3f( 1,-1, 1)
-    glVertex3f(-1,-1, 1)
-    glVertex3f(-1,-1,-1)
-    glVertex3f( 1,-1,-1)
-
-    glColor3f(0.0, 0.0, 1.0)  # Azul
-    glVertex3f( 1, 1, 1)
-    glVertex3f(-1, 1, 1)
-    glVertex3f(-1,-1, 1)
-    glVertex3f( 1,-1, 1)
-
-    glColor3f(1.0, 1.0, 0.0)  # Amarillo
-    glVertex3f( 1,-1,-1)
-    glVertex3f(-1,-1,-1)
-    glVertex3f(-1, 1,-1)
-    glVertex3f( 1, 1,-1)
-
-    glColor3f(1.0, 0.0, 1.0)  # Magenta
-    glVertex3f(-1, 1, 1)
-    glVertex3f(-1, 1,-1)
-    glVertex3f(-1,-1,-1)
-    glVertex3f(-1,-1, 1)
-
-    glColor3f(0.0, 1.0, 1.0)  # Cyan
-    glVertex3f( 1, 1,-1)
-    glVertex3f( 1, 1, 1)
-    glVertex3f( 1,-1, 1)
-    glVertex3f( 1,-1,-1)
-
     glEnd()
     glFlush()
 
