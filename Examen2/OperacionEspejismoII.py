@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("C:\\Users\\adria\\Desktop\\entorno\\TareasGrafi\\m1_oscura 1.png", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("C:\\Users\\adria\\Desktop\\entorno\\TareasGrafi\\Examen2\\m1_oscura 1.png", cv2.IMREAD_GRAYSCALE)
 
 # MODO RAW (Ciclos Anidados)
 # Este metodo es educativo para entender como se procesa cada pixel

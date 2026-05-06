@@ -22,7 +22,7 @@ def init():
 def draw_cube():
     global angle
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)  # Limpiar pantalla y buffer de profundidad
-
+    #Cubo1
     glLoadIdentity()
     glTranslatef(-3.0, 0.0, -10.0) # Lo movemos a la izquierda y atrás
     glRotatef(angle, 1, 0, 0)      # Solo eje X
