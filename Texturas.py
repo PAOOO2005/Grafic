@@ -130,17 +130,33 @@ def draw_roof():
     glTexCoord2f(1, 0);    glVertex3f( 1, 1,-1)
     glTexCoord2f(0.5, 1);  glVertex3f( 0, 2, 0)
 
-    glTexCoord2f(0, 0);    glVertex3f(-1, 1,-1)
-    glTexCoord2f(1, 0);    glVertex3f( 1, 1,-1)
-    glTexCoord2f(0.5, 1);  glVertex3f( 0, 2, 0)
-
-
 
 
     glEnd()
 
     glBindTexture(GL_TEXTURE_2D, 0)
 
+#arbol
+def draw_tree(x, z):
+    glPushMatrix()
+    glTranslatef(x, 0, z)
+    glRotatef(-90, 1, 0, 0)
+    
+    glDisable(GL_TEXTURE_2D)
+    q = gluNewQuadric()
+    
+    # Tronco
+    glColor3f(0.4, 0.2, 0.1)
+    gluCylinder(q, 0.2, 0.2, 1.0, 16, 1)
+    
+    # Copa
+    glTranslatef(0, 0, 0.8)
+    glColor3f(0.1, 0.5, 0.1)
+    gluCylinder(q, 0.8, 0.0, 1.5, 16, 1)
+    
+    gluDeleteQuadric(q)
+    glEnable(GL_TEXTURE_2D)
+    glPopMatrix()
 
 # ------------------------------------------------------------
 # Escena principal
@@ -154,6 +170,8 @@ def draw_scene():
     draw_ground()
     draw_cube()
     draw_roof()
+    draw_tree(-3, -2)
+    draw_tree(3, -4)
 
     glfw.swap_buffers(window)
 
