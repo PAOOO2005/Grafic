@@ -3,7 +3,7 @@
 
 
 
-![Logo ITM](Logo_ITM.PNG)
+![Logo ITM](logo_ITM.PNG)
 
 
 # Reporte de Misión: Graficación Táctica II 
